@@ -1,9 +1,17 @@
 #include<iostream>
 #include "List2.h"
 #include "List2.cpp"
+#include "Student.h"
+#include "Student.cpp"
+
+List2<Student>& SortById(List2<Student>& students)
+{
+
+};
 
 int main()
 {
+	//---------------------------------------------------------------
 	List2<int> list2;
 	list2.Add(5);
 	list2.Add(7);
@@ -38,5 +46,7 @@ int main()
 
 	cout << endl;
 	cout << list2[2] << endl;
+	//---------------------------------------------------------------
+
 
 }

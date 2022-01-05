@@ -141,9 +141,11 @@
   <ItemGroup>
     <ClCompile Include="HW_06_Golovash_Anton_27.12.2021.cpp" />
     <ClCompile Include="List2.cpp" />
+    <ClCompile Include="Student.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="List2.h" />
+    <ClInclude Include="Student.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
