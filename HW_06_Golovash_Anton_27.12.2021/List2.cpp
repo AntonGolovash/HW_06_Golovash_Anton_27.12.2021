@@ -11,7 +11,7 @@ template<class T>
 List2<T>::~List2()
 {
 	cout << "Destructor:\t" << this << endl;
-	empty();
+	clear();
 }
 
 template<class T>
@@ -33,24 +33,9 @@ void List2<T>::add(T data)
 }
 
 template<class T>
-void List2<T>::empty()
+Node<T>& List2<T>::back()
 {
-	while (_head != nullptr)
-	{
-		Node<T>* tmp = _head;
-		_head = _head->next;
-		delete tmp;
-		_size--;
-	}
-	_size = 0;
-	_head = _tail = nullptr;
-	cerr << "The list is empty\t" << "elements in the list\t";
-}
-
-template<class T>
-int List2<T>::size()
-{
-	return _size;
+	return *(_tail);
 }
 
 template<class T>
@@ -63,9 +48,32 @@ Node<T>* List2<T>::begin()
 }
 
 template<class T>
-Node<T>& List2<T>::back()
+void List2<T>::clear()
 {
-	return *(_tail);
+	while (_head != _tail)
+	{
+		Node<T>* tmp = _head;
+		_head = _head->next;
+		delete tmp;
+		_size--;
+	}
+	if (_head == _tail)
+	{
+		Node<T>* tmp = _head;
+		delete tmp;
+		_size--;
+	}
+	if (_size == 0)
+	{
+		_head = _tail = nullptr;
+		cerr << "The list size is - " << _size << endl;
+		cerr << "The list is cleared" << endl;
+		return;
+	}
+	if (_size != 0)
+	{
+		cerr << "The list is NOT cleared" << endl;
+	}
 }
 
 template<class T>
@@ -92,11 +100,16 @@ inline void List2<T>::insert(T data, int index)
 }
 
 template<class T>
-inline void List2<T>::replace(T data, int index)
+inline void List2<T>::isEmpty()
 {
-	if (_size <= index || index < 0)
-		throw std::bad_alloc();
-	this[index] = data;
+	while (_head != _tail)
+	{
+		Node<T>* previous = _head;
+		_head = _head->next;
+		delete previous;
+		_size--;
+	}
+	cout << "The List is empty" << endl;
 }
 
 template<class T>
@@ -104,7 +117,7 @@ inline void List2<T>::remove(int index)
 {
 	if (index == 0)
 	{
-		clear();
+		isEmpty();
 		return;
 	}
 
@@ -129,6 +142,20 @@ inline void List2<T>::remove(int index)
 }
 
 template<class T>
+inline void List2<T>::replace(T data, int index)
+{
+	if (_size <= index || index < 0)
+		throw std::bad_alloc();
+	this[index] = data;
+}
+
+template<class T>
+int List2<T>::size()
+{
+	return _size;
+}
+
+template<class T>
 inline T List2<T>::operator[](int index)
 {
 	if (_size <= index || index < 0)
@@ -145,15 +172,3 @@ inline T List2<T>::operator[](int index)
 	return target->data;
 }
 
-template<class T>
-inline void List2<T>::clear()
-{
-	while (_head != _tail)
-	{
-		Node<T>* previous = _head;
-		_head = _head->next;
-		delete previous;
-		_size--;
-	}
-	cout << "The List is clear" << endl;
-}

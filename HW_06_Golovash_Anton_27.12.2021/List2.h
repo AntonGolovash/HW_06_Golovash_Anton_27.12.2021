@@ -14,8 +14,8 @@ public:
 	Node<T>& back();// return a reference to the last element of the list
 	Node<T>* begin();// return a pointer to the first element of the list
 	void clear();// delete all elements in the list
-	void empty();// checking the list for emptiness
 	void insert(T data, int index);// add an item to a specific position in the list
+	void isEmpty();// checking the list for the emptiness
 	void remove(int index);// delete an item from a specific position in the list
 	void replace(T data, int index);// replace an item in a specific position in the list
 	int size();// returns a size of the list
