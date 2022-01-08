@@ -13,27 +13,27 @@ int main()
 {
 	//---------------------------------------------------------------
 	List2<int> list2;
-	list2.Add(5);
-	list2.Add(7);
-	list2.Add(10);
-	list2.Add(55);
-	list2.Add(78);
-	list2.Add(100);
+	list2.add(5);
+	list2.add(7);
+	list2.add(10);
+	list2.add(55);
+	list2.add(78);
+	list2.add(100);
 
-	Node<int>* tmpNode = &list2.GetHead();
+	Node<int>* tmpNode = list2.begin();
 	while (tmpNode != nullptr)
 	{
 		cout << tmpNode->data << "\t";
 		tmpNode = tmpNode->next;
 	}
 	cout << endl;
-	list2.Insert(255, 2);
+	list2.insert(255, 2);
 
 	cout << endl;
-	cout << "list2.Insert(255, 2)" << endl;
+	cout << "list2.insert(255, 2)" << endl;
 	cout << endl;
 
-	tmpNode = &list2.GetHead();
+	tmpNode = list2.begin();
 	while (tmpNode != nullptr)
 	{
 		cout << tmpNode->data << "\t";
@@ -42,7 +42,7 @@ int main()
 	cout << endl;
 	cout << list2[2] << endl;
 
-	list2.Delete(2);
+	list2.remove(2);
 
 	cout << endl;
 	cout << list2[2] << endl;

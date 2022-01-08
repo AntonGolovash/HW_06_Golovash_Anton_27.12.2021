@@ -11,11 +11,11 @@ template<class T>
 List2<T>::~List2()
 {
 	cout << "Destructor:\t" << this << endl;
-	Clear();
+	empty();
 }
 
 template<class T>
-void List2<T>::Add(T data)
+void List2<T>::add(T data)
 {
 	++_size;
 	Node<T>* tmp = new Node<T>;
@@ -33,7 +33,7 @@ void List2<T>::Add(T data)
 }
 
 template<class T>
-void List2<T>::Clear()
+void List2<T>::empty()
 {
 	while (_head != nullptr)
 	{
@@ -48,28 +48,28 @@ void List2<T>::Clear()
 }
 
 template<class T>
-int List2<T>::Getsize()
+int List2<T>::size()
 {
 	return _size;
 }
 
 template<class T>
-Node<T>& List2<T>::GetHead()
+Node<T>* List2<T>::begin()
 {
 	if (_head != nullptr)
-		return *(_head);
+		return _head;
 	cout << "Is empty" << endl;
-	return *(_head);
+	return _head;
 }
 
 template<class T>
-Node<T>& List2<T>::GetTail()
+Node<T>& List2<T>::back()
 {
 	return *(_tail);
 }
 
 template<class T>
-inline void List2<T>::Insert(T data, int index)
+inline void List2<T>::insert(T data, int index)
 {
 	if (_size <= index || index < 0)
 	{
@@ -92,7 +92,7 @@ inline void List2<T>::Insert(T data, int index)
 }
 
 template<class T>
-inline void List2<T>::Replace(T data, int index)
+inline void List2<T>::replace(T data, int index)
 {
 	if (_size <= index || index < 0)
 		throw std::bad_alloc();
@@ -100,11 +100,11 @@ inline void List2<T>::Replace(T data, int index)
 }
 
 template<class T>
-inline void List2<T>::Delete(int index)
+inline void List2<T>::remove(int index)
 {
 	if (index == 0)
 	{
-		DeleteFirst();
+		clear();
 		return;
 	}
 
@@ -146,14 +146,14 @@ inline T List2<T>::operator[](int index)
 }
 
 template<class T>
-inline void List2<T>::DeleteFirst()
+inline void List2<T>::clear()
 {
-	if (_head != nullptr)
+	while (_head != _tail)
 	{
 		Node<T>* previous = _head;
 		_head = _head->next;
 		delete previous;
 		_size--;
 	}
-	cout << "Head = nullptr" << endl;
+	cout << "The List is clear" << endl;
 }

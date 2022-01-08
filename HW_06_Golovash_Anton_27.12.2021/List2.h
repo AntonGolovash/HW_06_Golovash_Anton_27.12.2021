@@ -10,16 +10,16 @@ class List2
 public:
 	List2();
 	~List2();
-	void Add(T _data);
-	void Clear();
-	int Getsize();
-	Node<T>& GetHead();
-	Node<T>& GetTail();
-	void Insert(T data, int index);
-	void Replace(T data, int index);
-	void Delete(int index);
+	void add(T data);// add an item to the end of the list
+	Node<T>& back();// return a reference to the last element of the list
+	Node<T>* begin();// return a pointer to the first element of the list
+	void clear();// delete all elements in the list
+	void empty();// checking the list for emptiness
+	void insert(T data, int index);// add an item to a specific position in the list
+	void remove(int index);// delete an item from a specific position in the list
+	void replace(T data, int index);// replace an item in a specific position in the list
+	int size();// returns a size of the list
 	T operator[] (int index);
-	void DeleteFirst();
 private:
 	Node<T>* _head;
 	Node<T>* _tail;
