@@ -2,7 +2,7 @@
 #include "List2.h"
 #include "List2.cpp"
 #include "Student.h"
-//#include "Student.cpp"
+#include "Student.cpp"
 
 List2<Student>& SortById(List2<Student>& students)
 {
@@ -54,6 +54,10 @@ int main()
 	students.add(Student(36, "James", "+380506374982"));
 	students.add(Student(52, "Lucas", "+380968749521"));
 	//SortById(students);
+	for (size_t i = 0; i < students.size(); i++)
+	{
+		cout << students[i];
+	}
 	Node<Student>* tmpNode = students.begin();
 	while (tmpNode != nullptr)
 	{
@@ -61,7 +65,4 @@ int main()
 		tmpNode = tmpNode->next;
 	}
 	cout << endl;
-
-
-
 }

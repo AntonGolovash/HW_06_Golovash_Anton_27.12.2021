@@ -19,12 +19,29 @@ Student::~Student()
 
 }
 
-string Student::operator<<(Student& students)
+int Student::getID()
 {
-	stringstream ss;
-	ss << to_string(Student::_ID) << endl;
-	ss << Student::_Name<< endl;
-	ss << Student::_Phone << endl;
+	return _ID;
+}
 
-	return ss.str();
+string Student::getName()
+{
+	return _Name;
+}
+
+string Student::getPhone()
+{
+	return _Phone;
+}
+
+void Student::print()
+{
+}
+
+ostream& operator<<(ostream& out, Student& students)
+{
+	out << to_string(students.getID()) << endl;
+	out << students.getName() << endl;
+	out << students.getPhone() << endl;
+	return out;
 }

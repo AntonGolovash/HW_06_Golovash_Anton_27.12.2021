@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
-#include <sstream>
+#include <string>
+#include <ostream>
 
 using namespace std;
 
@@ -10,7 +11,11 @@ public:
 	Student();
 	Student(int ID, string Name, string Phone);
 	~Student();
-	string operator<<(Student& students);
+	int getID();
+	string getName();
+	string getPhone();
+	void print();
+	friend ostream& operator<<(ostream& out, Student& students);
 private:
 	int _ID;
 	string _Name;
