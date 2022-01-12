@@ -1,21 +1,21 @@
-#include "List2.h"
+#include "OneWayList.h"
 using namespace std;
 
 template<class T>
-List2<T>::List2() : _head(nullptr), _tail(nullptr), _size(0)
+OneWayList<T>::OneWayList() : _head(nullptr), _tail(nullptr), _size(0)
 {
 	cout << "Constructor default:\t" << this << endl;
 }
 
 template<class T>
-List2<T>::~List2()
+OneWayList<T>::~OneWayList()
 {
 	cout << "Destructor:\t" << this << endl;
 	clear();
 }
 
 template<class T>
-void List2<T>::add(T data)
+void OneWayList<T>::add(T data)
 {
 	++_size;
 	Node<T>* tmp = new Node<T>;
@@ -33,13 +33,13 @@ void List2<T>::add(T data)
 }
 
 template<class T>
-Node<T>& List2<T>::back()
+Node<T>& OneWayList<T>::back()
 {
 	return *(_tail);
 }
 
 template<class T>
-Node<T>* List2<T>::begin()
+Node<T>* OneWayList<T>::begin()
 {
 	if (_head != nullptr)
 		return _head;
@@ -48,7 +48,7 @@ Node<T>* List2<T>::begin()
 }
 
 template<class T>
-void List2<T>::clear()
+void OneWayList<T>::clear()
 {
 	while (_head != _tail)
 	{
@@ -77,7 +77,7 @@ void List2<T>::clear()
 }
 
 template<class T>
-inline void List2<T>::insert(T data, int index)
+inline void OneWayList<T>::insert(T data, int index)
 {
 	if (_size <= index || index < 0)
 	{
@@ -100,7 +100,7 @@ inline void List2<T>::insert(T data, int index)
 }
 
 template<class T>
-inline void List2<T>::isEmpty()
+inline void OneWayList<T>::isEmpty()
 {
 	while (_head != _tail)
 	{
@@ -113,7 +113,7 @@ inline void List2<T>::isEmpty()
 }
 
 template<class T>
-inline void List2<T>::remove(int index)
+inline void OneWayList<T>::remove(int index)
 {
 	if (index == 0)
 	{
@@ -142,7 +142,7 @@ inline void List2<T>::remove(int index)
 }
 
 template<class T>
-inline void List2<T>::replace(T data, int index)
+inline void OneWayList<T>::replace(T data, int index)
 {
 	if (_size <= index || index < 0)
 		throw std::bad_alloc();
@@ -150,13 +150,13 @@ inline void List2<T>::replace(T data, int index)
 }
 
 template<class T>
-int List2<T>::size()
+int OneWayList<T>::size()
 {
 	return _size;
 }
 
 template<class T>
-void List2<T>::unique()
+void OneWayList<T>::unique()
 {
 	int index = 0;
 	Node<T>* comparingNode = new Node<T>;
@@ -180,7 +180,7 @@ void List2<T>::unique()
 }
 
 template<class T>
-inline T List2<T>::operator[](int index)
+inline T OneWayList<T>::operator[](int index)
 {
 	if (_size <= index || index < 0)
 	{

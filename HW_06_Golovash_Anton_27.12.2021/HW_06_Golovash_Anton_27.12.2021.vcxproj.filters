@@ -18,7 +18,7 @@
     <ClCompile Include="HW_06_Golovash_Anton_27.12.2021.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="List2.cpp">
+    <ClCompile Include="OneWayList.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Student.cpp">
@@ -26,7 +26,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="List2.h">
+    <ClInclude Include="OneWayList.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Student.h">

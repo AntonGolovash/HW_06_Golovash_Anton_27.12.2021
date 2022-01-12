@@ -1,6 +1,6 @@
 #include<iostream>
-#include "List2.h"
-#include "List2.cpp"
+#include "OneWayList.h"
+#include "OneWayList.cpp"
 #include "Student.h"
 //#include "Student.cpp"
 
@@ -12,42 +12,42 @@
 int main()
 {
 	//---------------------------------------------------------------
-	//List2<int> list2;
-	//list2.add(5);
-	//list2.add(7);
-	//list2.add(10);
-	//list2.add(55);
-	//list2.add(78);
-	//list2.add(100);
+	OneWayList<int> oneWayList;
+	oneWayList.add(5);
+	oneWayList.add(7);
+	oneWayList.add(10);
+	oneWayList.add(55);
+	oneWayList.add(78);
+	oneWayList.add(100);
 
-	//Node<int>* tmpNode = list2.begin();
-	//while (tmpNode != nullptr)
-	//{
-	//	cout << tmpNode->data << "\t";
-	//	tmpNode = tmpNode->next;
-	//}
-	//cout << endl;
-	//list2.insert(255, 2);
+	Node<int>* tmpNode = oneWayList.begin();
+	while (tmpNode != nullptr)
+	{
+		cout << tmpNode->data << "\t";
+		tmpNode = tmpNode->next;
+	}
+	cout << endl;
+	oneWayList.insert(255, 2);
 
-	//cout << endl;
-	//cout << "list2.insert(255, 2)" << endl;
-	//cout << endl;
+	cout << endl;
+	cout << "list2.insert(255, 2)" << endl;
+	cout << endl;
 
-	//tmpNode = list2.begin();
-	//while (tmpNode != nullptr)
-	//{
-	//	cout << tmpNode->data << "\t";
-	//	tmpNode = tmpNode->next;
-	//}
-	//cout << endl;
-	//cout << list2[2] << endl;
+	tmpNode = oneWayList.begin();
+	while (tmpNode != nullptr)
+	{
+		cout << tmpNode->data << "\t";
+		tmpNode = tmpNode->next;
+	}
+	cout << endl;
+	cout << oneWayList[2] << endl;
 
-	//list2.remove(2);
+	oneWayList.remove(2);
 
-	//cout << endl;
-	//cout << list2[2] << endl;
+	cout << endl;
+	cout << oneWayList[2] << endl;
 	//---------------------------------------------------------------
-	List2<Student> students {};
+	OneWayList<Student> students {};
 	students.add(Student(93, "John", "+380672583647"));
 	students.add(Student(84, "Oliver", "+380663259874"));
 	students.add(Student(45, "Liam", "+380976582149"));

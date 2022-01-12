@@ -5,11 +5,11 @@ template<class T1>
 class Node;
 
 template<class T>
-class List2
+class OneWayList
 {
 public:
-	List2();
-	~List2();
+	OneWayList();
+	~OneWayList();
 	void add(T data);// add an item to the end of the list
 	Node<T>& back();// return a reference to the last element of the list
 	Node<T>* begin();// return a pointer to the first element of the list
