@@ -156,6 +156,30 @@ int List2<T>::size()
 }
 
 template<class T>
+void List2<T>::unique()
+{
+	int index = 0;
+	Node<T>* comparingNode = new Node<T>;
+	comparingNode->data = _head;
+	Node<T>* nodeForCompare = new Node<T>;
+	nodeForCompare = comparingNode->next;
+	while (comparingNode->next != _tail)
+	{
+		while (nodeForCompare != _tail)
+		{
+			if (comparingNode->data == nodeForCompare)
+			{
+				remove(index);
+				unique();
+			}
+			index++;
+			nodeForCompare = nodeForCompare->next;
+		}
+		comparingNode->data = comparingNode->next;
+	}
+}
+
+template<class T>
 inline T List2<T>::operator[](int index)
 {
 	if (_size <= index || index < 0)

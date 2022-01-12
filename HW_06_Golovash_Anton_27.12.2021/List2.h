@@ -19,6 +19,7 @@ public:
 	void remove(int index);// delete an item from a specific position in the list
 	void replace(T data, int index);// replace an item in a specific position in the list
 	int size();// returns a size of the list
+	void unique();// remove duplicate items from the list
 	T operator[](int index);
 private:
 	Node<T>* _head;
